@@ -1,18 +1,20 @@
 <template>
   <div>
-    <v-app-bar color="deep-purple accent-4" dense dark>
+    <v-app-bar dark>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Page title</v-toolbar-title>
+      <v-toolbar-title>PWA VueJS</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+      <v-btn flat>
+        <v-icon>mdi-login-variant</v-icon>
+        &nbsp; Sign In
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+      <v-btn flat>
+        <v-icon>mdi-account-plus-outline</v-icon>
+        &nbsp; Sign Up
       </v-btn>
 
       <v-menu left bottom>
