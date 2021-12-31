@@ -49,6 +49,14 @@
                     label="Confirm Password"
                     type="password"
                   ></v-text-field>
+
+                  <v-autocomplete
+                    v-model="value"
+                    :items="items"
+                    dense
+                    filled
+                    label="Select your status"
+                  ></v-autocomplete>
                 </v-form>
               </v-card-text>
               <v-card-actions>
@@ -62,3 +70,14 @@
     </v-content>
   </v-app>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: ["Teacher", "Student"],
+      value: null,
+    };
+  },
+};
+</script>
