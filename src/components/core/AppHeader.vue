@@ -7,12 +7,12 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn flat>
+      <v-btn>
         <v-icon>mdi-login-variant</v-icon>
         &nbsp; Sign In
       </v-btn>
 
-      <v-btn :to="{ name: 'Register' }" flat>
+      <v-btn :to="{ name: 'Register' }">
         <v-icon>mdi-account-plus-outline</v-icon>
         &nbsp; Sign Up
       </v-btn>
