@@ -12,10 +12,11 @@
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    prepend-icon="mdi-account"
-                    name="login"
-                    label="Login"
-                    type="text"
+                    prepend-icon="mdi-email"
+                    name="email"
+                    label="Email"
+                    type="email"
+                    v-model="login.email"
                   ></v-text-field>
                   <v-text-field
                     id="password"
@@ -23,6 +24,7 @@
                     name="password"
                     label="Password"
                     type="password"
+                    v-model="login.password"
                   ></v-text-field>
                 </v-form>
               </v-card-text>
@@ -30,6 +32,11 @@
                 <v-spacer></v-spacer>
                 <v-btn :to="{ name: 'Dashboard' }" color="primary">Login</v-btn>
               </v-card-actions>
+
+              <p class="text-center">
+                Don't have an account
+                <router-link :to="{ name: 'Register' }">Register</router-link>
+              </p>
             </v-card>
           </v-flex>
         </v-layout>
@@ -42,26 +49,11 @@
 export default {
   data() {
     return {
-      items: ["Teacher", "Student"],
-      value: null,
+      login: {
+        email: "",
+        password: "",
+      },
     };
-  },
-  watch: {
-    search(val) {
-      val && val !== this.select && this.querySelections(val);
-    },
-  },
-  methods: {
-    querySelections(v) {
-      this.loading = true;
-      // Simulated ajax query
-      setTimeout(() => {
-        this.items = this.states.filter((e) => {
-          return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
-        });
-        this.loading = false;
-      }, 500);
-    },
   },
 };
 </script>
